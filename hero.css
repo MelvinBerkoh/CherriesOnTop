@@ -8,13 +8,19 @@ body {
 }
 
 /* hero section css */
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .main__container{
   margin-top:20px ;
-  width: 100%;
-  height: 80vh;
+  width: 97%;
+  height: 75vh;
   position: relative;
   overflow: hidden;
   margin-bottom: 100px;
+  margin-left : 20px;
+  /* margin-right : 20px; */
 }
 .main__content{
   width: 60%;
@@ -52,7 +58,7 @@ button:hover{
   border: 2px solid #C9AF93;
 }
 .overlay{
-  height: 100%;
+  height: 90%;
   padding-left: 40px;
   padding-right: 40px;
   width: 100%;
@@ -61,19 +67,19 @@ button:hover{
   /* background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)); */
 }
 .slider{
-  height: 80vh;
-  width: 100%;
+  height: 75vh;
+  width: 97%;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  animation: slide 10s infinite;
+  animation: slide 15s infinite;
 }
 #slideImg{
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  animation: zoom 3s linear infinite;
+  object-fit: contain;
+  animation: zoom 5s linear infinite;
 }
 
 @keyframes zoom {
@@ -209,4 +215,13 @@ button:hover{
   }
   
   
+}
+
+.lemmecook h1{
+  font-size: 3rem;
+  color: #000000;
+  font-weight: 30px;
+  line-height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

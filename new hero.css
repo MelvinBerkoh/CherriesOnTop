@@ -1,0 +1,98 @@
+.hero-container{
+  margin-top: 25px;
+  height: 100vh;
+  /* background-image: url(/Pictures/thousands-of-sprinkle-ice-cream-toppings-pastel-with-a-light-pastel-color-scheme-as-the-background--837752408.png); */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.background{
+  background-color: #F7F7F7;
+  height: 100vh;
+
+}
+.welcome{
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.main-intro p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #4D231C;
+  font-family: 'Montserrat', sans-serif;
+}
+.main-qoute p {
+  font-size: 14px;
+  line-height: 18px;
+  color: #4D231C;
+  font-family: 'Montserrat', sans-serif;
+}
+.main-intro a {
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+main{
+  background-image: url(/Pictures/pic21.svg), url(/Pictures/Untitled\ design\ \(1\).png);
+  height: calc(100vh - 60px);
+  width: 100%;
+  margin-top: 10px;
+  background-size: 100vh, cover;
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+main .main-intro h1{
+  font-size:36px;
+  line-height: 60px;
+}
+main p{
+  font-size:18px;
+  line-height: 30px;
+}
+/* main a{
+  margin-top: 30px;
+  font-size:18px;
+ display: block;
+ background-color:blue ;
+ padding: 10px 20px;
+ width: fit-content; 
+} */
+main .main-qoute p{
+  border-left: 5px solid #4D231C;
+  padding-left: 20px;
+  margin: 40px 0px;
+}
+
+main .main-intro {
+position: relative;
+right: 35vh;
+padding-bottom: 8vh;
+}
+main .main-qoute{
+  position: relative;
+  left: 10vh; 
+}
+button{
+  width: 200px;
+  padding: 15px 0; 
+  text-align: center;
+  margin: 0 10px; 
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #C9AF93;
+  background: #C9AF93;
+  color: #fff;
+  cursor: pointer;
+  transition:  background 0.5s ease;;
+}
+button:hover{
+  background: transparent;
+  border: 2px solid #C9AF93;
+}
