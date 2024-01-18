@@ -18,7 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Style+Script&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
     <title>final</title>
   </head>
   <body>
@@ -66,14 +71,13 @@
     <!-- hero section -->
 
     <section class="hero">
-      <div class="video-container">
-        <video autoplay loop muted playsinline>
-          <source
-            src="/Pictures/istockphoto-969890604-640_adpp_is.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+      <video autoplay loop muted plays-inline>
+        <source
+          src="/Pictures/istockphoto-969890604-640_adpp_is.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <!-- <div class="video-container"></div> -->
 
       <div class="hero-text">
         <!-- <h5>Sundae Funday</h5> -->
@@ -90,7 +94,7 @@
         </button>
       </div>
       <div class="hero-img">
-        <img src="/Pictures/pic21.svg" alt="" />
+        <img src="/Pictures/pic21.svg" alt="" class="filter-svg" />
       </div>
     </section>
     <div class="icons">
@@ -100,6 +104,51 @@
     </div>
     <div class="scroll-down">
       <a href="#"><i class="ri-arrow-down-s-fill"></i></a>
+    </div>
+
+    <!-- footer  -->
+    <div class="footer">
+      <div class="inner_footer">
+        <div class="logo_container">
+          <img src="/Pictures/Logo1.png" alt="logo" />
+        </div>
+        <div class="footer_third">
+          <h1>Need Help?</h1>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+        <div class="footer_third">
+          <h1>More</h1>
+          <a href="#">Photo-Gallery</a>
+          <a href="#">Contact Us</a>
+          <a href="#">NewsLetter</a>
+        </div>
+        <div class="footer_third">
+          <h1>Socials</h1>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-facebook" style="color: #c9af93"></i>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-instagram" style="color: #c9af93"></i>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-tiktok" style="color: #c9af93"></i>
+              TikTok
+            </a>
+          </li>
+          <span>
+            © CherriesOnTop All Rights Reserved, CherriesOnTop Chester<br />
+          </span>
+        </div>
+      </div>
     </div>
     <script src="/js/heroSlider.js"></script>
   </body>
