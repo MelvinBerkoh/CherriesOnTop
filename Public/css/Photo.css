@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500&family=Roboto:wght@100;400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px 20px 0 20px;
+}
+.container .heading{
+width: 50%;
+padding-bottom: 50px;
+}
+.container .heading h3{
+  padding-bottom: 10px;
+  color: #4D231C;
+  font-size: 3em;
+  font-weight: bold;
+  border-bottom:3px solid #4D231C;
+}
+.container .heading h3 span{
+font-weight: 100;
+}
+.container .box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: bottom;
+}
+.container .box .img-holder{
+  display: flex;
+  flex-direction: column;
+  width: 32.5%;
+}
+.container .box .img-holder img{
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .5s;
+}
+.container .box .img-holder img:hover{
+  transform: scale(1.1);
+}
+.container .btn{
+  margin: 40px 0 70px 0;
+}
+button{
+  background-color: #DA002B;
+  color: #ffffff;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  border: none;
+  border-radius: 5px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  font-weight: 800px;
+  font-family:Roboto;
+  cursor: pointer;
+  transition: all .5s;
+}
+button:hover{
+  color: rgb(186, 28, 28);
+  background-color: rgb(255, 255, 255);
+  padding-top: 8px;
+  padding-bottom:8px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.bottom-line{
+  width: 100%;
+  border: 1px solid #4D231C;
+  margin: 20px 0;
+}
+/* Path: stylesheets/photos.css */
+@media screen and (max-width: 769px){
+  .container{
+    margin: 0;
+  }
+  .container .heading{
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .container .heading h3{
+    font-size: 2em;
+  }
+  .container .box{
+    flex-direction: column;
+  }
+  .container .box .img-holder{
+    width: 100%;
+  }
+  .container .box .img-holder img{
+    margin-bottom: 0;
+  }
+  .container .btn{
+    margin: 20px 0 50px 0;
+  }
+}
+  @media screen and (max-width: 480px){
+    .container .heading h3{
+      font-size: 1.5em;
+    }
+    .container .btn{
+      margin: 20px 0 50px 0;
+    }
+    
+  }
+    
+
