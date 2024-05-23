@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact-Page</title>
+    <link rel="stylesheet" href="stylesheets/home2.css" />
+    <link rel="stylesheet" href="stylesheets/contact.css" />
+    <link rel="stylesheet" href="/stylesheets/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- HeaderSection starts here -->
+      <!-- Nav-Bar Section -->
+      <a href="index.html"
+        ><img
+          class="navbar-logo"
+          src="/Pictures/Logo1.png"
+          alt="Cherries On Top Logo"
+        />
+        <h1 class="home-title">Cherries On Top</h1></a
+      >
+      <nav class="stroke">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Subscribe</a></li>
+        </ul>
+      </nav>
+      <!-- NavBar Section Ends Here -->
+    </header>
+    <main>
+      <form action="https://formspree.io/f/xqkolykr" method="POST">
+        <div class="message-icon">
+          <i class="fa-regular fa-envelope"></i>
+          <span>Contact Us Directly </span>
+        </div>
+        <div id="input-field">
+          <i class="fa-regular fa-user"></i>
+          <input type="text" placeholder="Name" name="Name" required />
+        </div>
+        <div id="input-field">
+          <i class="fa-solid fa-phone"></i>
+          <input type="tel" placeholder="Phone No." name="Phone" />
+        </div>
+        <div id="input-field">
+          <i class="fa-solid fa-inbox"></i>
+          <input
+            type="email"
+            placeholder="Email Address"
+            name="Email"
+            required
+          />
+        </div>
+        <div id="input-field">
+          <i class="fa-solid fa-location-dot"></i>
+          <input
+            type="text"
+            placeholder="Location of event"
+            name="Location"
+            required
+          />
+        </div>
+        <div id="input-field">
+          <i class="fa-solid fa-calendar-days"></i>
+          <input type="Date" placeholder="Date" name="Date" required />
+        </div>
+        <div id="input-field">
+          <i class="fa-regular fa-clock"></i>
+          <input type="Time" placeholder="Time" name="Time" />
+        </div>
+        <div id="input-field">
+          <i class="fa-regular fa-comment"></i>
+          <textarea
+            name="Message"
+            placeholder="How can we help you?"
+            rows="10"
+          ></textarea>
+        </div>
+        <p>
+          <span><input type="checkbox" /></span>I agree to subscribe to the
+          newsletter of CherriesOnTopChester
+        </p>
+        <input type="Submit" value="Submit" class="send-btn" />
+      </form>
+    </main>
+    <!-- footer section -->
+    <div class="footer">
+      <div class="inner_footer">
+        <div class="logo_container">
+          <img src="/Pictures/Logo1.png" alt="logo" />
+        </div>
+        <div class="footer_third">
+          <h1>Need Help?</h1>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+        <div class="footer_third">
+          <h1>More</h1>
+          <a href="#">Photo-Gallery</a>
+          <a href="#">Contact Us</a>
+          <a href="#">NewsLetter</a>
+        </div>
+        <div class="footer_third">
+          <h1>Socials</h1>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-facebook" style="color: #c9af93"></i>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-instagram" style="color: #c9af93"></i>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-tiktok" style="color: #c9af93"></i>
+              Tiktok
+            </a>
+          </li>
+          <span>
+            © CherriesOnTop All Rights Reserved, CherriesOnTop Chester<br />
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
