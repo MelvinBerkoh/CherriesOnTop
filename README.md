@@ -1,6 +1,6 @@
 To do list for the project:
 
-- [x] Create a home page building on what is in index.html
+- [ ] Create a home page building on what is in index.html
 - [ ] Make the pages all mobile responsive
 - [ ] Check all the links to make sure they work
 - [ ] Add instagram feed via api
