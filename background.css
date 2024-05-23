@@ -1,0 +1,13 @@
+.first-layer{
+    background-color: #cfcfcf;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+.background-layer{
+    background-image: url(/Pictures/hard-scooped-ice-cream-towering-in-a-glass-bowl-against-a-pastel-pink-background-strawberry-vanill-641528319.png);
+    background-size: cover;
+}
+.text-section{
+}
