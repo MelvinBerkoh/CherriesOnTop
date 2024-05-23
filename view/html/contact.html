@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact-Page</title>
+    <title>form-Page</title>
     <link rel="stylesheet" href="stylesheets/home2.css" />
     <link rel="stylesheet" href="stylesheets/contact.css" />
     <link rel="stylesheet" href="/stylesheets/footer.css" />
@@ -28,68 +28,100 @@
       <nav class="stroke">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Subscribe</a></li>
+          <li><a href="/Photos.html">Photos</a></li>
+          <li><a href="/Services.html">Services</a></li>
+          <li><a href="/subcribe.html">Subscribe</a></li>
         </ul>
       </nav>
       <!-- NavBar Section Ends Here -->
     </header>
-    <main>
-      <form action="https://formspree.io/f/xqkolykr" method="POST">
-        <div class="message-icon">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Contact Us Directly </span>
-        </div>
-        <div id="input-field">
-          <i class="fa-regular fa-user"></i>
-          <input type="text" placeholder="Name" name="Name" required />
-        </div>
-        <div id="input-field">
-          <i class="fa-solid fa-phone"></i>
-          <input type="tel" placeholder="Phone No." name="Phone" />
-        </div>
-        <div id="input-field">
-          <i class="fa-solid fa-inbox"></i>
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="Email"
-            required
-          />
-        </div>
-        <div id="input-field">
-          <i class="fa-solid fa-location-dot"></i>
-          <input
-            type="text"
-            placeholder="Location of event"
-            name="Location"
-            required
-          />
-        </div>
-        <div id="input-field">
-          <i class="fa-solid fa-calendar-days"></i>
-          <input type="Date" placeholder="Date" name="Date" required />
-        </div>
-        <div id="input-field">
-          <i class="fa-regular fa-clock"></i>
-          <input type="Time" placeholder="Time" name="Time" />
-        </div>
-        <div id="input-field">
-          <i class="fa-regular fa-comment"></i>
-          <textarea
-            name="Message"
-            placeholder="How can we help you?"
-            rows="10"
-          ></textarea>
-        </div>
-        <p>
-          <span><input type="checkbox" /></span>I agree to subscribe to the
-          newsletter of CherriesOnTopChester
+    <div class="container">
+      <div class="container-packages">
+        <h2 class="heading">Packages</h2>
+        <h3 class="sub-heading">Dessert</h3>
+        <p class="package-items">
+          &middot;Chocolate cake &middot;Cheesecake &middot;Apple pie
+          &middot;Ice cream &middot;sundae &middot;Brownies &middot; and more!
         </p>
-        <input type="Submit" value="Submit" class="send-btn" />
-      </form>
-    </main>
+        <h3 class="sub-heading">Dinner</h3>
+        <p class="package-items">
+          &middot;Chocolate cake &middot;Cheesecake &middot;Apple pie
+          &middot;Ice cream &middot;sundae &middot;Brownies &middot; and more!
+        </p>
+        <h3 class="sub-heading">Brunch</h3>
+        <p class="package-items">
+          &middot;Chocolate cake &middot;Cheesecake &middot;Apple pie
+          &middot;Ice cream &middot;sundae &middot;Brownies &middot; and more!
+        </p>
+        <hr />
+        <h4 class="heading-email">Email Us: cherriesontopchester@gmail.com</h4>
+      </div>
+      <main>
+        <form action="https://formspree.io/f/xqkolykr" method="POST">
+          <div class="message-icon">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Contact Us Directly </span>
+          </div>
+          <div id="input-field">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" placeholder="Name" name="Name" required />
+          </div>
+          <div id="input-field">
+            <i class="fa-solid fa-phone"></i>
+            <input type="tel" placeholder="Phone No." name="Phone" />
+          </div>
+          <div id="input-field">
+            <i class="fa-solid fa-inbox"></i>
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="Email"
+              required
+            />
+          </div>
+          <div id="input-field">
+            <i class="fa-solid fa-location-dot"></i>
+            <input
+              type="text"
+              placeholder="Location of event (Note: Price may vary depending on location)"
+              name="Location"
+              required
+            />
+          </div>
+          <div id="input-field">
+            <i class="fa-solid fa-calendar-days"></i>
+            <input type="Date" placeholder="Date" name="Date" required />
+          </div>
+          <div id="input-field">
+            <i class="fa-regular fa-clock"></i>
+            <input type="Time" placeholder="Time" name="Time" />
+          </div>
+          <div id="input-field">
+            <i class="fa-solid fa-box"></i>
+            <select name="package-type" id="#" required>
+              <option disabled selected value="">Choose A Package</option>
+              <option value="Brunch">Brunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Other">Other(Please describe in detail)</option>
+            </select>
+          </div>
+          <div id="input-field">
+            <i class="fa-regular fa-comment"></i>
+            <textarea
+              name="Message"
+              placeholder="How can we help you?"
+              rows="10"
+            ></textarea>
+          </div>
+          <p>
+            <span><input type="checkbox" /></span>I agree to subscribe to the
+            newsletter of CherriesOnTopChester
+          </p>
+          <input type="Submit" value="Submit" class="send-btn" />
+        </form>
+      </main>
+    </div>
     <!-- footer section -->
     <div class="footer">
       <div class="inner_footer">
@@ -125,7 +157,7 @@
           <li>
             <a href="#"
               ><i class="fa-brands fa-tiktok" style="color: #c9af93"></i>
-              Tiktok
+              TikTok
             </a>
           </li>
           <span>
