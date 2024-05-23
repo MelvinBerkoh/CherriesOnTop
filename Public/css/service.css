@@ -29,7 +29,7 @@ body{
   width: 400px;
   border-radius: 4px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,
-   rgba(17,17,17,0.6) 100%),url('/Pictures/pic10.jpeg');
+   rgba(17,17,17,0.6) 100%),url('/Public/Pictures/pic10.jpeg');
    background-size: cover;
    position: relative;
    color: #FEFAE0; 
@@ -39,12 +39,12 @@ body{
 .services__card:nth-child(2) {
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,
    rgba(17,17,17,0.6) 100%),
-   url('/Pictures/pic23.jpeg');
+   url('/Public/Pictures/pic23.jpeg');
 }
 .services__card:nth-child(3) {
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,
    rgba(17,17,17,0.6) 100%),
-   url('/Pictures/pic12.jpeg');
+   url('/Public/Pictures/pic12.jpeg');
 }
 .services__card h4{
   position: absolute;
