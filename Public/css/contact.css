@@ -13,7 +13,7 @@ main{
 }
 
 form{
-  background-color: #eedfce;
+  background-color: #ffffff;
   width: 500px;
   padding: 30px;
   font-size: 18px;
@@ -41,7 +41,7 @@ form input,textarea{
   border-right: none;
   border-bottom: 1px solid #4E231C;
   outline: none;
-  background-color: #eedfce;
+  background-color: #ffffff;
 }
 #input-field{
   padding-bottom: 20px;
@@ -90,7 +90,7 @@ span{
   align-items: top;
 }
 .container-packages{
-  background-color: #EDDECE;
+  background-color: #ffffff;
   padding: 50px;
   outline: 3px dashed #DA002B;
   outline-offset: -30px;
