@@ -1,0 +1,29 @@
+.section-divider{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+margin:0 25px 35px 25px;
+
+
+}
+.section-divider img{
+  width: 70%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  
+
+}
+
+  .section-divider p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 0 20px;
+    padding: 0 10px 0 20px;
+    border-left: 1px solid #ddd;
+  }
+.section-header{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
