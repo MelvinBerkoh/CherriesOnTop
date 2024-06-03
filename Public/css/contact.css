@@ -1,39 +1,44 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Lobster', cursive;
 }
-main{
+
+main {
   width: 100%;
-  height: 100vh;
   display: flex;
-  align-items: top;
+  align-items: flex-start;
   justify-content: center;
 }
 
-form{
+form {
   background-color: #ffffff;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   padding: 30px;
   font-size: 18px;
 }
-.message-icon{
+
+.message-icon {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
-.message-icon i{
+
+.message-icon i {
   font-size: 40px;
   color: #4E231C;
   margin-right: 10px;
 }
-.message-icon span{
+
+.message-icon span {
   font-size: 22px;
   font-weight: bold;
   margin-left: 15px;
 }
-form input,textarea{
+
+form input, textarea {
   width: 100%;
   border-top: none;
   border-bottom: none;
@@ -43,16 +48,19 @@ form input,textarea{
   outline: none;
   background-color: #ffffff;
 }
-#input-field{
+
+#input-field {
   padding-bottom: 20px;
   display: flex;
   align-items: center;
 }
-#input-field i{
-font-size: 22px;
-margin-right: 15px;
+
+#input-field i {
+  font-size: 22px;
+  margin-right: 15px;
 }
-.send-btn{
+
+.send-btn {
   width: 100%;
   background-color: #DA002B;
   color: #ffffff;
@@ -62,60 +70,161 @@ margin-right: 15px;
   cursor: pointer;
   transition: .5s;
 }
-.send-btn:hover{
+
+.send-btn:hover {
   color: rgb(186, 28, 28);
   background-color: rgb(255, 255, 255);
 }
-p{
-font-size :10px;
-display: inline-block;
-font-family: Arial, Helvetica, sans-serif;
-font-style: italic;
-color: #992734;
-font-weight: bold;
-align-items: top;
-margin-bottom: 10px;
-padding-left: 8px;
+
+p {
+  font-size: 10px;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  color: #992734;
+  font-weight: bold;
+  align-items: top;
+  margin-bottom: 10px;
+  padding-left: 8px;
 }
-span{
+
+span {
   display: inline-block;
   align-items: top;
   margin-right: 8px;
 }
-.container{
+
+.container {
   margin: 50px;
   box-shadow: rgba(0, 0, 0, .1);
   display: grid;
   grid-template-columns: 40% 60%;
-  align-items: top;
+  align-items: flex-start;
 }
-.container-packages{
+
+.container-packages {
   background-color: #ffffff;
   padding: 50px;
-  outline: 3px dashed #DA002B;
+  /* outline: 3px dashed #DA002B; */
   outline-offset: -30px;
   text-align: center;
-  height: 500px; 
+  height: 500px;
 }
-.heading{
+
+.heading {
   font-size: 35px;
   text-transform: uppercase;
   font-family: 'Courier New', Courier, monospace;
   color: #4D231C;
 }
-.sub-heading{
+
+.sub-heading {
   color: #4D231C;
   font-size: 30px;
   cursor: pointer;
 }
-.heading-email{
+
+.heading-email {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   padding-top: 5px;
   color: #4D231C;
 }
-hr{
+
+hr {
   width: 100%;
   border: 1px solid #4D231C;
   margin: 20px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+
+  .container-packages {
+    height: auto;
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .sub-heading {
+    font-size: 24px;
+  }
+
+  .heading-email {
+    font-size: 18px;
+  }
+
+  form {
+    width: 100%;
+    max-width: none;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .sub-heading {
+    font-size: 20px;
+  }
+
+  .heading-email {
+    font-size: 16px;
+  }
+
+  form {
+    font-size: 16px;
+  }
+
+  .message-icon span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 5px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
+  .heading-email {
+    font-size: 14px;
+  }
+
+  form {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .message-icon i {
+    font-size: 30px;
+  }
+
+  .message-icon span {
+    font-size: 16px;
+  }
+
+  #input-field i {
+    font-size: 18px;
+  }
 }
