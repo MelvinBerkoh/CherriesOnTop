@@ -71,3 +71,13 @@
   color: #666; /* Color for the author's name */
   font-size: 14px; /* Font size for the author's name */
 }
+
+@media (max-width: 768px) {
+  .image-row {
+      flex-direction: column;
+  }
+
+  .image-row img {
+      max-width: 100%;
+  }
+}
