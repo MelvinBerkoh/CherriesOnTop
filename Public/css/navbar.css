@@ -128,11 +128,11 @@ margin: 0px;
     transition: all 0.5s ease;
     height: 60vh;
     z-index: -1;
-    background-color: #c8ae92e6;
+    background-color: #ffffffe6;
     padding-top: 50px;
   }
   .navbar__menu.active{
-    background-color: hsla(31, 33%, 68%, 0.982);
+    background-color: hsla(0, 0%, 100%, 0.982);
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
@@ -205,11 +205,11 @@ margin: 0px;
     transition: all 0.5s ease;
     height: 60vh;
     z-index: -1;
-    background-color: #c8ae92e6;
+    background-color: #ffffffe6;
     padding-top: 50px;
   }
   .navbar__menu.active{
-    background-color: hsla(31, 33%, 68%, 0.982);
+    background-color: hsla(0, 0%, 100%, 0.982);
     top: 100%;
     transition: all 0.5s ease;
     z-index: 99;
@@ -287,11 +287,11 @@ margin: 0px;
     transition: all 0.5s ease;
     height: 60vh;
     z-index: -1;
-    background-color: #c8ae92e6;
+    background-color: #ffffffe6;
     padding-top: 50px;
   }
   .navbar__menu.active{
-   background-color: hsla(31, 33%, 68%, 0.982);
+   background-color: hsla(0, 0%, 100%, 0.982);
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
