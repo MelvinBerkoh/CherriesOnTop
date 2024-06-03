@@ -1,29 +1,73 @@
 .section-divider{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-margin:0 25px 35px 25px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  gap: 20px;
 
 
 }
 .section-divider img{
-  width: 70%;
-  height: 100%;
-  border: 1px solid #ddd;
-  border-radius: 24px;
+  border-radius: 25%;
+  width:350px;
+  height: 350px;
+  object-fit: cover;
   
 
 }
 
   .section-divider p{
-    font-size: 20px;
-    font-weight: 500;
-    color: #333;
-    margin: 0 0 0 20px;
-    padding: 0 10px 0 20px;
-    border-left: 1px solid #ddd;
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
   }
 .section-header{
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    color: #4D231C;
+}
+
+/* image row css  */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjust the gap between images as needed */
+  padding: 20px; /* Adjust padding as needed */
+  background-color: #fff; /* Set the background color as needed */
+}
+
+.image-row img {
+  width: 100%;
+  max-width: 24%; /* Adjust the max-width as needed */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* Optional: adds rounded corners to images */
+}
+
+/* Testimonial styling */
+.testimonial {
+  background-color: #f9f9f9; /* Background color for the testimonial */
+  padding: 20px; /* Padding around the testimonial content */
+  border-radius: 10px; /* Rounded corners for the testimonial */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+}
+
+.testimonial-content {
+  margin-bottom: 10px; /* Margin at the bottom of the testimonial content */
+}
+
+.testimonial-content p {
+  font-size: 16px; /* Font size for the testimonial text */
+  line-height: 1.5; /* Line height for improved readability */
+}
+
+.testimonial-author {
+  text-align: right; /* Align the author's name to the right */
+}
+
+.testimonial-author p {
+  font-style: italic; /* Italicize the author's name */
+  color: #666; /* Color for the author's name */
+  font-size: 14px; /* Font size for the author's name */
 }
