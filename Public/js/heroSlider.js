@@ -1,14 +1,14 @@
 var slideImg = document.getElementById("slideImg");
   
 var images = new Array(
-  "/Pictures/pic12.jpeg",
-  "/Pictures/menu item 2.jpeg",
-  "/Pictures/menu item3.jpeg",
-  "/Pictures/pic10.jpeg",
-  "/Pictures/pic13.jpeg",
-  "/Pictures/pic15.jpeg",
-  "/Pictures/pic9.jpeg",
-  "/Pictures/pic23.jpeg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
+  "/Public/Pictures/IMG_3575.jpg",
 );
 var len = images.length;
 var i = 0;
