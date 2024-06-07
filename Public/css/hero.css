@@ -58,11 +58,13 @@
   justify-content: center;
   height: 100%; /* Center the content vertically */
 }
-.content h1{
+
+.content h1 {
   font-size: 60px;
- }
-.content h3{
-width:80%;
+}
+
+.content h3 {
+  width: 80%;
   margin: 20px auto 100px;
   font-weight: 100;
   line-height: 25px;
@@ -103,6 +105,16 @@ button:hover {
     width: 80%; /* Adjust content width for smaller screens */
   }
 
+  .content h1 {
+    font-size: 40px; /* Adjust heading font size for tablets */
+  }
+
+  .content h3 {
+    font-size: 16px; /* Adjust subheading font size for tablets */
+    width: 90%; /* Make the text width wider */
+    margin: 15px auto 80px; /* Adjust margins */
+  }
+
   button {
     width: 180px; /* Adjust button width for smaller screens */
     padding: 12px 0;
@@ -118,6 +130,17 @@ button:hover {
   .content {
     width: 90%; /* Adjust content width for mobile screens */
     font-size: 0.9rem; /* Reduce font size for better readability */
+  }
+
+  .content h1 {
+    font-size: 28px; /* Adjust heading font size for mobile screens */
+    line-height: 1.2; /* Adjust line height */
+  }
+
+  .content h3 {
+    font-size: 14px; /* Adjust subheading font size for mobile screens */
+    width: 100%; /* Make the text width wider */
+    margin: 10px auto 60px; /* Adjust margins */
   }
 
   button {
