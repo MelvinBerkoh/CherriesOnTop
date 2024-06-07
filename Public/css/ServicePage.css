@@ -1,0 +1,113 @@
+/* Base Styles */
+.container {
+  margin: 40px auto;
+  display: flex;
+  gap: 1rem;
+  width: 80%;
+  max-width: 1200px;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow cards to wrap to new lines */
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 calc(33.333% - 1rem); /* Default to 3 cards per row */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box; /* Include padding and border in element's width and height */
+  max-width: 100%; /* Ensure cards don't overflow the container */
+}
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card header p {
+  margin: 0;
+  color: #666;
+}
+
+.card h2 {
+  color: #333;
+  margin: 20px 0;
+  min-height: 40px;
+}
+
+.card h2 span {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card ul li::before {
+  content: '✔';
+  color: green;
+  margin-right: 10px;
+}
+
+.card button {
+  padding: 10px 20px;
+  border: none;
+  background: #4D231C;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.card button:hover {
+  background: #3b1b14;
+}
+
+/* Responsive Styles */
+/* For tablets and larger smartphones */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Reduce container width to fit better on smaller screens */
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 1rem); /* Adjust to 2 cards per row */
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+
+  .card {
+    flex: 1 1 100%; /* Adjust to 1 card per row */
+    margin-bottom: 1rem; /* Add some space between rows */
+  }
+
+  .card h2 {
+    font-size: 1.5rem; /* Adjust font size for better readability on small screens */
+  }
+
+  .card button {
+    padding: 10px 15px; /* Adjust button padding */
+    font-size: 1rem; /* Adjust button font size */
+  }
+}
