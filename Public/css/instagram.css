@@ -1,0 +1,27 @@
+/* Container to hold the Instagram posts */
+.instagram-feed-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Styling each Instagram post */
+.instagram-post {
+  position: relative;
+  padding-bottom: 100%; /* Aspect Ratio 1:1 */
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.instagram-post iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

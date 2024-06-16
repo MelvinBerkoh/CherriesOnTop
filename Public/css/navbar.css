@@ -421,22 +421,18 @@ input:checked + .slider:before {
     max-width: 1600px; /* Increase the maximum width of the navbar container */
   }
 
-  .home-title {
-    font-size: 60px; /* Increase the title font size */
-  }
 
   .navbar__link {
-    font-size: 18px; /* Increase the navbar link font size */
     padding: 20px; /* Add more padding to the links */
     margin: 0 20px; /* Increase the spacing between links */
   }
 
 
   .navbar__menu {
-    padding-top: 10px; /* Add padding to the top of the navbar menu */
+    padding-top: 5px; /* Add padding to the top of the navbar menu */
   }
 
   .navbar {
-    padding-top: 10px; /* Add padding to the top of the navbar */
+    padding-top: 5px; /* Add padding to the top of the navbar */
   }
 }

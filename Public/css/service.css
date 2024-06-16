@@ -48,6 +48,7 @@ body {
 }
 
 .services__card h4 {
+  padding-bottom: 20px;
   position: absolute;
   color: #FEFAE0;
   bottom: 70px;
