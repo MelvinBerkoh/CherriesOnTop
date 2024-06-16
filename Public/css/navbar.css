@@ -416,23 +416,5 @@ input:checked + .slider:before {
 }
 
 /* Responsive styling for large screens */
-@media screen and (min-width: 1440px) {
-  .navbar__container {
-    max-width: 1600px; /* Increase the maximum width of the navbar container */
-  }
 
 
-  .navbar__link {
-    padding: 20px; /* Add more padding to the links */
-    margin: 0 20px; /* Increase the spacing between links */
-  }
-
-
-  .navbar__menu {
-    padding-top: 5px; /* Add padding to the top of the navbar menu */
-  }
-
-  .navbar {
-    padding-top: 5px; /* Add padding to the top of the navbar */
-  }
-}
