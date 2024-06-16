@@ -1,0 +1,103 @@
+
+.policy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Header Styles */
+.policy-container h1{
+  text-align: center;
+  color: #4D231C;
+  margin-bottom: 20px;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 20px;
+}
+
+.policy-container h2 {
+  color: #4D231C;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+p, ol {
+  margin-bottom: 10px;
+}
+
+/* Ordered List Styles */
+ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+  padding-left: 0px;
+}
+
+ol li {
+  margin-bottom: 10px;
+}
+
+ol li span {
+  font-weight: bold;
+  color: #4D231C;
+}
+
+/* Back to Top Button Styles */
+#back-to-top {
+  display: none; /* Initially hidden */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #4D231C;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #aa1616;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+
+  .policy-container {
+      padding: 15px;
+  }
+
+  h1 {
+      font-size: 24px;
+  }
+
+  h2 {
+      font-size: 20px;
+  }
+
+  p, ol {
+      font-size: 16px;
+  }
+
+  #back-to-top {
+      bottom: 20px;
+      right: 20px;
+      padding: 8px 12px;
+      font-size: 12px;
+  }
+}

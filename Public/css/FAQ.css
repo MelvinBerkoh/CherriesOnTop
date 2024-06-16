@@ -90,3 +90,23 @@
       padding: 0 12px; /* Adjust padding for tablet screens */
   }
 }
+/* Back to Top Button Styles */
+#back-to-top {
+  display: none; /* Initially hidden */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #4D231C;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #aa1616;
+}
