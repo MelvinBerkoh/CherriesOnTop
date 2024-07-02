@@ -1,0 +1,90 @@
+/* Styling for the social-media section */
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto; /* Center the entire section horizontally */
+  padding: 10px 20px; /* Even padding on the left and right */
+  border: 4px dashed #C9AF93;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  max-width: 1200px; 
+  margin-bottom: 60px;
+}
+
+/* Styling the title h3 */
+.social-media h3 {
+  margin-bottom: 15px;
+  font-size: 2.5em;
+  color: #333;
+  text-align: center; /* Center the title */
+}
+
+/* Grid layout for the feed */
+.feed {
+  display: grid;
+  grid-template-columns: 0.55fr 0.65fr; /* Adjusted column ratios */
+  gap: 40px; /* Space between columns */
+  width: 100%; /* Full width of the parent */
+}
+
+/* Styling for the social-text section */
+.social-text {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  text-align: center; /* Center the text */
+  width: 100%; /* Ensure the social-text fills its column */
+}
+
+/* Centering the h4 within the social-text */
+.social-text h4 {
+  margin-bottom: 10px;
+  font-size: 1.25em;
+  color: #333;
+}
+
+/* Styling for the p tag within social-text */
+.social-text p {
+  width: 100%; /* Make sure the paragraph fills its parent */
+  margin-bottom: 30px; /* Increase the bottom margin for more space above the button */
+  color: #555;
+  line-height: 20px;
+}
+
+/* Styling the button inside the a tag */
+.connect-me {
+  padding: 10px 20px;
+  background-color: #C9AF93;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase; /* Makes the text uppercase */
+}
+
+.connect-me:hover {
+  background-color: #ab9379;
+}
+
+/* Styling for the instagram section */
+.instagram {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  /* Additional styling can be added here if needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feed {
+    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+  }
+}

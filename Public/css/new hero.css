@@ -79,7 +79,7 @@ main .main-qoute{
   position: relative;
   left: 10vh; 
 }
-button{
+.learn-more{
   width: 200px;
   padding: 15px 0; 
   text-align: center;
@@ -92,7 +92,7 @@ button{
   cursor: pointer;
   transition:  background 0.5s ease;;
 }
-button:hover{
+.content button:hover{
   background: transparent;
   border: 2px solid #C9AF93;
 }
