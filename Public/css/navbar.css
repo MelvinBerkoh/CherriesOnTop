@@ -25,7 +25,8 @@
   top: 0;
   position: sticky;
   z-index: 999;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .navbar__container{
   padding-top: 40px;
@@ -35,7 +36,7 @@
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 0px 0 0;
+  padding: 0 20px; /* Add padding for better spacing */
 }
 .navbar_logo{
 display:flex;
@@ -106,8 +107,32 @@ margin: 0px;
   transition: all 0.3s ease-in-out;
   background-color: #4E231C;
 }
+/* Styles for large screens */
+@media screen and (min-width: 1300px) {
+  .navbar {
+    justify-content: space-between; /* Make navbar fill the screen */
+    padding: 0 40px; /* Add padding for larger screens */
+  }
+
+  .navbar__container {
+    max-width: 100%;
+    justify-content: space-between;
+    padding: 0; /* Remove padding so items touch the edges */
+  }
+
+  .navbar_logo {
+    justify-content: flex-start; /* Align the logo to the left */
+  }
+
+  .navbar__menu {
+    justify-content: flex-end; /* Align the menu to the right */
+  }
+}
 /* mobile responsive */
 @media screen and (max-width: 960px) {
+  .navbar{
+    margin-bottom: 0px;
+  }
   .navbar__container{
     display: flex;
     justify-content: space-between;

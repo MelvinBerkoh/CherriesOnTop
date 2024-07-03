@@ -87,3 +87,10 @@ body {
   color: white;
 }
  
+@media screen and (max-width: 435px) {
+  .services h1{
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
