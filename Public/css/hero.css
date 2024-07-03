@@ -71,21 +71,20 @@
 }
 
 .content button {
-  width: 200px;
-  padding: 15px 0;
-  text-align: center;
-  margin: 0 10px;
-  border-radius: 25px;
-  font-weight: bold;
-  border: 2px solid #C9AF93;
-  background: #C9AF93;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.5s;
-  position: absolute;
-  bottom: 20px; /* Move the button to the bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Center the button horizontally */
+  
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px auto 0; /* Place the button directly below the text and center it */
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #C9AF93;
+    background: #C9AF93;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s;
+    position: relative; /* Keep the button within normal document flow */
+  
 }
 
  .content button:hover {
@@ -148,3 +147,49 @@
     padding: 10px 0;
   }
 }
+@media (max-width: 400px) {
+  .learn-more {
+    margin: 20px auto 40px; /* Add more bottom margin */
+  }
+
+  .content h3 {
+    margin: 0px auto 50px; /* Adjust bottom margin to avoid overlap */
+  }
+
+  .banner {
+    height: 50vh; /* Adjust banner height for mobile screens */
+  }
+}
+
+@media (max-width: 375px) {
+  .banner {
+    height: 58vh; /* Increase banner height slightly for more space */
+  }
+
+  .content {
+    width: 90%; /* Ensure content is full width for smaller screens */
+    font-size: 0.9rem; /* Reduce font size for better readability */
+    justify-content: flex-start; /* Align content towards the top */
+    padding-top: 10px; /* Add padding to bring content down */
+  }
+
+  .content h1 {
+    font-size: 28px; /* Reduce the heading font size */
+    line-height: 1.2; /* Adjust line height */
+    margin-bottom: 5px; /* Reduce bottom margin */
+  }
+
+  .content h3 {
+    font-size: 14px; /* Reduce subheading font size */
+    width: 100%; /* Full width for subheading */
+    margin: 0px auto 0px; /* Reduce bottom margin */
+  }
+
+  .learn-more {
+    width: 160px; /* Adjust button width for small screens */
+    padding: 10px 0; /* Reduce padding */
+    position: relative; /* Ensure it stays within the document flow */
+  }
+}
+
+

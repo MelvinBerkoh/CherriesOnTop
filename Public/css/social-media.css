@@ -5,7 +5,6 @@
   align-items: center;
   margin: 20px auto; /* Center the entire section horizontally */
   padding: 10px 20px; /* Even padding on the left and right */
-  border: 4px dashed #C9AF93;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
@@ -31,8 +30,8 @@
 
 /* Styling for the social-text section */
 .social-text {
+  border: 4px dashed #C9AF93;
   padding: 10px;
-  border: none;
   border-radius: 8px;
   background-color: #fff;
   display: flex;
@@ -59,18 +58,23 @@
 
 /* Styling the button inside the a tag */
 .connect-me {
-  padding: 10px 20px;
-  background-color: #C9AF93;
+  width: 200px;
+  padding: 15px 0; 
+  text-align: center;
+  margin: 0 10px; 
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #C9AF93;
+  background: #C9AF93;
   color: #fff;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: uppercase; /* Makes the text uppercase */
+  transition:  background 0.5s ease;;
 }
 
 .connect-me:hover {
-  background-color: #ab9379;
+  background: transparent;
+  border: 2px solid #C9AF93;
+  color: #C9AF93;
 }
 
 /* Styling for the instagram section */
