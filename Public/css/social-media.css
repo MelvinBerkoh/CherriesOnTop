@@ -14,7 +14,7 @@
 
 /* Styling the title h3 */
 .social-media h3 {
-  margin-bottom: 15px;
+  margin-bottom: 2.5rem;
   font-size: 2.5em;
   color: #333;
   text-align: center; /* Center the title */
@@ -29,17 +29,64 @@
 }
 
 /* Styling for the social-text section */
+/* Base styles for .social-text */
 .social-text {
-  border: 4px dashed #C9AF93;
-  padding: 10px;
-  border-radius: 8px;
+  position: relative;
+  border: 4px solid #C9AF93;
+  padding: 20px;
+  border-radius: 0 0 50% 50%;
   background-color: #fff;
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center children horizontally */
-  text-align: center; /* Center the text */
-  width: 100%; /* Ensure the social-text fills its column */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  overflow: hidden;
 }
+
+/* Styles for the cone pseudo-element */
+.social-text::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid #C9AF93;
+  border-bottom: none; /* Remove the bottom border */
+  z-index: -1;
+}
+
+/* Styles for the cone texture pseudo-element */
+.social-text::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 300px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none; /* Remove the bottom border */
+  z-index: -2;
+  background-size: 10px 10px;
+}
+
+/* Optional: Style adjustments for text within the cone */
+.social-text h1, .social-text p {
+  margin: 10px 0;
+  color: #4E231C;
+}
+
+
+
 
 /* Centering the h4 within the social-text */
 .social-text h4 {
@@ -86,9 +133,17 @@
   /* Additional styling can be added here if needed */
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .feed {
     grid-template-columns: 1fr; /* Stack vertically on smaller screens */
   }
+  .connect-me{
+    margin-bottom: 20px;
+    width: 150px;
+    padding: 10px 0;
+  }
 }
+
+

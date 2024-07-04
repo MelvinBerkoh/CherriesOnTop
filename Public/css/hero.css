@@ -93,7 +93,30 @@
 }
 
 /* Responsive Styles */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .banner {
+    height: 70vh; /* Adjust banner height for tablets */
+  }
 
+  .content {
+    width: 70%; /* Adjust content width for tablets */
+  }
+
+  .content h1 {
+    font-size: 48px; /* Adjust heading font size for tablets */
+  }
+
+  .content h3 {
+    font-size: 18px; /* Adjust subheading font size for tablets */
+    width: 85%; /* Make the text width wider */
+    margin: 15px auto 90px; /* Adjust margins */
+  }
+
+  .learn-more {
+    width: 180px; /* Adjust button width for tablets */
+    padding: 14px 0; /* Adjust button padding for tablets */
+  }
+}
 /* For tablets and larger smartphones */
 @media (max-width: 768px) {
   .banner {
