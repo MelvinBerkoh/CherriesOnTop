@@ -162,7 +162,7 @@
   .content h3 {
     font-size: 14px; /* Adjust subheading font size for mobile screens */
     width: 100%; /* Make the text width wider */
-    margin: 10px auto 60px; /* Adjust margins */
+    margin: 10px auto 10px; /* Adjust margins */
   }
 
   button {
@@ -184,7 +184,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 395px) {
   .banner {
     height: 58vh; /* Increase banner height slightly for more space */
   }
@@ -208,11 +208,28 @@
     margin: 0px auto 0px; /* Reduce bottom margin */
   }
 
+   .learn-more {
+    width: 160px; /* Adjust button width for small screens */
+    padding: 10px 0; /* Reduce padding */
+    position: relative; /* Ensure it stays within the document flow */
+  } 
+}
+
+@media (max-width: 375px){
+  .content h1 {
+    font-size: 23.5px; /* Reduce the heading font size */
+    line-height: 1; /* Adjust line height */
+    margin-bottom: 5px; /* Reduce bottom margin */
+  }
+  .content h3 {
+    font-size: 11px; /* Reduce subheading font size */
+    width: 100%; /* Full width for subheading */
+    margin: 0px auto -5px; /* Reduce bottom margin */
+  }
   .learn-more {
     width: 160px; /* Adjust button width for small screens */
     padding: 10px 0; /* Reduce padding */
     position: relative; /* Ensure it stays within the document flow */
-  }
+  } 
+
 }
-
-
