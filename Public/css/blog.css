@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap');
+
 .blog-section {
   width: 80%;
   margin: 0 auto;
@@ -12,7 +14,7 @@
 .category {
   font-size: 14px;
   font-weight: bold;
-  color: #666;
+  color: #C9AF92;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -21,6 +23,7 @@
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
+  color: #4D231C;
 }
 
 .author-date {
@@ -32,6 +35,8 @@
 .featured-image {
   width: 100%;
   height: auto;
+  max-height: 650px;
+  object-fit: cover;
   margin-bottom: 20px;
 }
 
@@ -48,17 +53,137 @@
   text-decoration: none;
 }
 
-.read-more:hover {
-  text-decoration: underline;
-}
-
 .previous-article {
-  border-top: 1px solid #ddd;
+  display: flex;
+  border-top: 4px solid #C9AF92;
   padding-top: 20px;
   margin-top: 20px;
+  text-align: center;
+  flex-direction: row;
+}
+
+.previous-article .previous-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.previous-content {
+  flex: 1;
 }
 
 .previous-article .title {
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.read-more {
+  display: block;
+  margin-top: 10px;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  color: #000;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.read-more:hover {
+  cursor: pointer;
+}
+
+.hopefully {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-title {
+  text-align: center;
+  font-family: Gwendolyn;
+  margin-bottom: 35px;
+  color: #4D231C;
+  width: 50%;
+  font-size: 3em;
+  font-weight: bolder;
+  border-bottom: 3px solid #4D231C;
+}
+
+.excerpt span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4D231C;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .author-date {
+    font-size: 14px;
+  }
+
+  .excerpt {
+    font-size: 14px;
+  }
+
+  .main-title {
+    width: 70%;
+    font-size: 2.5em;
+  }
+
+  .previous-article {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .previous-article .previous-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .previous-article .title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .author-date {
+    font-size: 12px;
+  }
+
+  .excerpt {
+    font-size: 12px;
+  }
+
+  .main-title {
+    width: 80%;
+    font-size: 2em;
+  }
+
+  .previous-article .title {
+    font-size: 16px;
+  }
 }
