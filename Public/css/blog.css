@@ -121,7 +121,31 @@
   margin-top: 10px;
   margin-bottom: 15px;
 }
+.annoying{
+  font-size: 20px;
+  font-weight: bold;
+  color: #4D231C;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
 
+}
+ul.custom-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul.custom-list li {
+  
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+ul.custom-list li strong {
+  font-weight: bold;
+  color: #4D231C;
+}
 @media (max-width: 768px) {
   .blog-section {
     width: 90%;
