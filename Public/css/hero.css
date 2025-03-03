@@ -1,4 +1,8 @@
 /* Base Styles */
+html, body {
+  overflow-x: hidden;
+}
+
 .banner {
   width: 100%;
   height: 80vh;
@@ -187,7 +191,7 @@
   }
 }
 
-@media (max-width: 395px) {
+@media (max-width: 400px) {
   .banner {
     height: 58vh; /* Increase banner height slightly for more space */
   }

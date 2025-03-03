@@ -39,6 +39,118 @@
     <link rel="stylesheet" href="css/service.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="/Public/css/social-media.css">
+    <style>
+      .calendar-container {
+        background-color: white;
+        color: #4d231c;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border: 2px solid #c9af92;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .calendar-header {
+        font-family: "Gwendolyn", cursive;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .calendar-header button {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #4d231c;
+      }
+      .days-of-week,
+      .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+      }
+      .days-of-week div,
+      .calendar-days div {
+        padding: 10px;
+        border: 1px solid #c9af92;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .event-details {
+        margin-top: 20px;
+        padding: 15px;
+        border: 2px solid #c9af92;
+        background: white;
+        border-radius: 10px;
+      }
+      .hidden {
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .calendar-container {
+          max-width: 100%;
+          padding: 15px;
+        }
+    
+        .calendar-header {
+          font-size: 18px;
+        }
+    
+        .calendar-header button {
+          font-size: 20px;
+          padding: 8px;
+        }
+    
+        .days-of-week,
+        .calendar-days {
+          grid-template-columns: repeat(7, minmax(30px, 1fr));
+          gap: 5px;
+        }
+    
+        .days-of-week div,
+        .calendar-days div {
+          padding: 8px;
+          font-size: 14px;
+        }
+    
+        .event-details {
+          font-size: 14px;
+        }
+      }
+      @media (max-width: 450px) {
+        .calendar-header {
+          font-size: 18px;
+        }
+    
+        .calendar-header button {
+          font-size: 18px;
+          padding: 6px;
+        }
+    
+        .days-of-week,
+        .calendar-days {
+          grid-template-columns: repeat(7, minmax(25px, 1fr)); /* Adjust for small screens */
+          gap: 3px;
+        }
+    
+        .days-of-week div,
+        .calendar-days div {
+          padding: 6px;
+          font-size: 12px;
+        }
+    
+        .event-details {
+          font-size: 12px;
+          padding: 10px;
+        }
+      }
+    </style>
+    
   </head>
   <body onload="slider()">
     <header>
@@ -127,6 +239,25 @@
       </div>
    </div>
 </div> 
+
+<!-- this will be the calender event section -->
+ 
+<div class="calendar-container">
+  <h1>Where to Find Us</h1>
+  <div class="calendar-header">
+    <button id="prevMonth">&#9665;</button>
+    <h2 id="monthYear"></h2>
+    <button id="nextMonth">&#9655;</button>
+  </div>
+  <div class="calendar">
+    <div class="days-of-week"></div>
+    <div class="calendar-days"></div>
+  </div>
+</div>
+<div id="eventDetails" class="event-details hidden">
+  <h3>Event Details</h3>
+  <p id="eventInfo">Click on a date to see event details.</p>
+</div>
 <!-- this will be the social media section -->
 
 <div class = "social-media">
@@ -188,4 +319,5 @@
   </body>
   <script src="/Public/js/navbar.js"></script>
   <script src="/Public/js/heroSlider.js"></script>
+  <script src="/Public/js/cal.js"></script>
 </html>
