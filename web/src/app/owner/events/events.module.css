@@ -1,0 +1,180 @@
+.page {
+  padding-block: 3rem 5rem;
+}
+
+.heading {
+  margin-block: 2rem;
+}
+
+.heading h1 {
+  margin-block: 0.75rem;
+  color: var(--cherry);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+}
+
+.heading > p:last-child {
+  color: var(--muted);
+}
+
+.form {
+  max-width: 48rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--paper);
+}
+
+.form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field + .field {
+  margin-top: 1.25rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  background: var(--cream);
+  color: var(--chocolate);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 3px solid var(--cherry);
+  outline-offset: 3px;
+}
+
+.field [aria-invalid="true"] {
+  border-color: var(--cherry);
+}
+
+.error {
+  margin-block: 0.5rem;
+  color: var(--cherry);
+  font-size: 0.9rem;
+}
+
+.form > .error {
+  margin-bottom: 1.5rem;
+}
+
+.note {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.form button {
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.listHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.eventCard,
+.empty {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--paper);
+}
+
+.eventCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.eventCard h2 {
+  margin-block: 0.75rem;
+  font-size: 1.75rem;
+  overflow-wrap: anywhere;
+}
+
+.eventCard time {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.badge {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: var(--rose);
+  color: var(--cherry-dark);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.badge[data-status="PUBLISHED"] {
+  background: #e5eee5;
+  color: #244529;
+}
+
+.empty p {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 680px) {
+  .page {
+    padding-block: 2rem 3rem;
+  }
+
+  .form {
+    padding: 1.25rem;
+  }
+
+  .listHeading {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 0;
+  }
+
+  .eventCard {
+    flex-direction: column;
+  }
+}
