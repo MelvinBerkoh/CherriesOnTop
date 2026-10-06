@@ -1,0 +1,73 @@
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.menuButton {
+  display: none;
+  min-width: 4.5rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--cherry);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cherry);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  background: var(--rose);
+}
+
+.mobileNav {
+  display: none;
+  max-height: calc(100dvh - 5rem);
+  overflow-y: auto;
+  border-top: 1px solid var(--line);
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding-block: 1rem 1.5rem;
+}
+
+.mobileLinks > a:not(:global(.button)) {
+  padding-block: 0.85rem;
+  color: var(--cherry);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.mobileLinks > :global(.button) {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .desktopNav {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileNav:not([hidden]) {
+    display: block;
+  }
+}
