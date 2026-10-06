@@ -47,6 +47,7 @@ export default async function QuoteDetailPage({
 
   const request = await db.quoteRequest.findUnique({
     where: { id },
+    include: { booking: true },
   });
 
   if (!request) notFound();
@@ -172,8 +173,16 @@ export default async function QuoteDetailPage({
           aria-labelledby="manage-heading"
         >
           <h2 id="manage-heading">Manage request</h2>
+          <p className={styles.note}>
+            <Link className="button" href={`/owner/quotes/${request.id}/booking`}>
+              Manage private booking
+            </Link>
+          </p>
           <QuoteStatusForm
             id={request.id}
+            bookingActive={request.booking?.status === "CONFIRMED" ||
+              (request.booking?.status === "HOLD" &&
+                (!request.booking.holdExpiresAt || request.booking.holdExpiresAt > new Date()))}
             initialStatus={request.status}
             updatedAt={request.updatedAt.toISOString()}
           />
