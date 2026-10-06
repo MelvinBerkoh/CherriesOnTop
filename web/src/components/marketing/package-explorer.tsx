@@ -1,7 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { getPackageEstimate, type CateringPackage } from "@/lib/packages";
+import {
+  getPackageEstimate,
+  type CateringPackage,
+} from "@/lib/packages";
 import styles from "./package-explorer.module.css";
 
 const money = new Intl.NumberFormat("en-US", {
@@ -26,22 +30,7 @@ export function PackageExplorer({
   if (!selected) return null;
 
   const estimate = getPackageEstimate(selected, guestCount);
-
-  const emailBody = [
-    "Hi Cherries On Top,",
-    "",
-    `I'm interested in the ${selected.name} package for ${guestCount} guests.`,
-    "",
-    "Event date:",
-    "Event location:",
-    "Event type:",
-    "",
-    "Could you help me with a quote and availability?",
-  ].join("\n");
-
-  const inquiryHref = `mailto:cherriesontopchester@gmail.com?subject=${encodeURIComponent(
-    "Catering inquiry: " + selected.name,
-  )}&body=${encodeURIComponent(emailBody)}`;
+  const inquiryHref = `/quote?package=${encodeURIComponent(selected.id)}&guests=${guestCount}`;
 
   return (
     <section
@@ -58,13 +47,15 @@ export function PackageExplorer({
           </h2>
 
           <p>
-            Pick your treats. Bring your people. See what your celebration
-            could look like.
+            Pick your treats. Bring your people. See what your
+            celebration could look like.
           </p>
         </div>
 
         <fieldset className={styles.choices}>
-          <legend className="sr-only">Choose a catering package</legend>
+          <legend className="sr-only">
+            Choose a catering package
+          </legend>
 
           {packages.map((item, index) => (
             <label
@@ -81,11 +72,15 @@ export function PackageExplorer({
                 onChange={() => setSelectedId(item.id)}
               />
 
-              <span className={styles.choiceNumber}>0{index + 1}</span>
-              <span className={styles.choiceName}>{item.name}</span>
-
+              <span className={styles.choiceNumber}>
+                0{index + 1}
+              </span>
+              <span className={styles.choiceName}>
+                {item.name}
+              </span>
               <span className={styles.choicePrice}>
-                {money.format(item.pricePerPersonCents / 100)} / person
+                {money.format(item.pricePerPersonCents / 100)}
+                {" "}/ person
               </span>
             </label>
           ))}
@@ -96,7 +91,9 @@ export function PackageExplorer({
             <p className="eyebrow">On the menu</p>
             <h3>{selected.name}</h3>
 
-            <p className={styles.description}>{selected.description}</p>
+            <p className={styles.description}>
+              {selected.description}
+            </p>
 
             <ul className={styles.menuList}>
               {selected.menu.map((item) => (
@@ -105,15 +102,23 @@ export function PackageExplorer({
             </ul>
 
             <div className={styles.details}>
-              <span>{selected.serviceMinutes} minutes of service</span>
-              <span>{selected.minimumGuests}-guest minimum</span>
+              <span>
+                {selected.serviceMinutes} minutes of service
+              </span>
+              <span>
+                {selected.minimumGuests}-guest minimum
+              </span>
             </div>
           </div>
 
           <div className={styles.estimate}>
             <div className={styles.guestHeading}>
-              <label htmlFor="guest-count">How many guests?</label>
-              <output htmlFor="guest-count">{guestCount}</output>
+              <label htmlFor="guest-count">
+                How many guests?
+              </label>
+              <output htmlFor="guest-count">
+                {guestCount}
+              </output>
             </div>
 
             <input
@@ -157,14 +162,14 @@ export function PackageExplorer({
               </p>
             </div>
 
-            <a className="button" href={inquiryHref}>
+            <Link className="button" href={inquiryHref}>
               Ask about this package
-            </a>
+            </Link>
 
             <p id="guest-count-help" className={styles.note}>
-              Package estimate only. Final pricing and availability are
-              confirmed with your quote. For events outside this guest range,
-              get in touch.
+              Package estimate only. Final pricing and availability
+              are confirmed with your quote. For events outside
+              this guest range, get in touch.
             </p>
           </div>
         </div>
