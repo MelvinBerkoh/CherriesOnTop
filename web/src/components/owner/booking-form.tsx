@@ -54,7 +54,7 @@ export function BookingForm({
           <option value="72">72 hours</option>
         </select>
       </fieldset>
-      <p>One event per New Jersey day. A hold blocks the whole day and expires no later than the event start.</p>
+      <p>One event per New Jersey day. Allow at least 48 hours before the event starts, including when confirming a hold. A hold blocks the whole day and expires no later than the event start.</p>
       <div className={styles.buttons}>
         {!confirmed && !completed && <>
           <button className="button" name="intent" value="HOLD" disabled={pending}>

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { QuoteForm } from "@/components/marketing/quote-form";
 import styles from "@/components/marketing/quote-form.module.css";
 import { cateringPackages } from "@/lib/packages";
+import { getEarliestBookingDate, formatBookingCutoff } from "@/lib/booking-lead-time";
 import {
+  createQuoteSchema,
   eventTypes,
-  getTodayInNewJersey,
 } from "@/lib/quote-request";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ type QuotePageProps = {
   searchParams: Promise<{
     package?: string | string[];
     guests?: string | string[];
+    date?: string | string[];
   }>;
 };
 
@@ -42,6 +44,9 @@ export default async function QuotePage({
       ? guests
       : "";
 
+  const selectedDate = createQuoteSchema().shape.eventDate.safeParse(query.date);
+  const initialEventDate = selectedDate.success ? selectedDate.data : "";
+
   return (
     <main id="main-content" className="container">
       <section
@@ -54,15 +59,17 @@ export default async function QuotePage({
           Tell us what you are planning. We will help you find
           the right treats for your celebration.
         </p>
+        <p>We need at least 48 hours before your event starts. Earliest start: <strong>{formatBookingCutoff()}</strong>, New Jersey time.</p>
       </section>
 
       <QuoteForm
-        key={`${initialPackageId}:${initialGuests}`}
+        key={`${initialPackageId}:${initialGuests}:${initialEventDate}`}
         packages={cateringPackages}
         eventTypes={eventTypes}
-        minDate={getTodayInNewJersey()}
+        minDate={getEarliestBookingDate()}
         initialPackageId={initialPackageId}
         initialGuests={initialGuests}
+        initialEventDate={initialEventDate}
       />
     </main>
   );

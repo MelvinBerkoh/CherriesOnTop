@@ -66,6 +66,7 @@ export async function createPublicEvent(
 
   revalidatePath("/owner/events");
   revalidatePath("/events");
+  revalidatePath("/availability");
   redirect("/owner/events");
 }
 
@@ -138,5 +139,6 @@ export async function updatePublicEvent(
   revalidatePath("/owner/events");
   revalidatePath(`/owner/events/${identity.data.id}/edit`);
   revalidatePath("/events");
+  revalidatePath("/availability");
   redirect("/owner/events");
 }

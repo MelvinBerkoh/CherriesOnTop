@@ -82,6 +82,7 @@ type QuoteFormProps = {
   minDate: string;
   initialPackageId: string;
   initialGuests: string;
+  initialEventDate: string;
 };
 
 export function QuoteForm({
@@ -90,6 +91,7 @@ export function QuoteForm({
   minDate,
   initialPackageId,
   initialGuests,
+  initialEventDate,
 }: QuoteFormProps) {
   const [state, formAction, pending] = useActionState(
     submitQuoteRequest,
@@ -101,7 +103,7 @@ export function QuoteForm({
     email: "",
     phone: "",
     eventType: "",
-    eventDate: "",
+    eventDate: initialEventDate,
     preferredTime: "",
     location: "",
     guestCount: initialGuests,
@@ -378,7 +380,7 @@ export function QuoteForm({
 
           <p className={styles.note}>
             Submitting lets us contact you about this event.
-            Your booking is confirmed separately.
+            Your booking is confirmed separately. You can <Link className="text-link" href="/availability">check available dates</Link> before sending.
           </p>
 
           <button

@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { Temporal } from "@js-temporal/polyfill";
+import { getBookingCutoff, getEarliestBookingDate, formatBookingCutoff } from "@/lib/booking-lead-time";
 import { cateringPackages } from "@/lib/packages";
 
 export const eventTypes = [
@@ -94,8 +96,8 @@ export function createQuoteSchema(now = new Date()) {
       .string()
       .refine(isCalendarDate, "Choose a valid event date.")
       .refine(
-        (value) => value >= getTodayInNewJersey(now),
-        "Choose today or a future date.",
+        (value) => value >= getEarliestBookingDate(now),
+        "Allow at least 48 hours before your event.",
       ),
 
     preferredTime: z
@@ -137,5 +139,16 @@ export function createQuoteSchema(now = new Date()) {
       .transform((value) => value || undefined),
 
     message: optionalText(2000),
+  }).superRefine((request, context) => {
+    if (!request.preferredTime || !isCalendarDate(request.eventDate)) return;
+    try {
+      const start = Temporal.PlainDateTime.from(`${request.eventDate}T${request.preferredTime}`)
+        .toZonedDateTime("America/New_York", { disambiguation: "reject" });
+      if (start.epochMilliseconds < getBookingCutoff(now).getTime()) {
+        context.addIssue({ code: "custom", path: ["preferredTime"], message: `Allow at least 48 hours. Earliest start: ${formatBookingCutoff(now)}.` });
+      }
+    } catch {
+      context.addIssue({ code: "custom", path: ["preferredTime"], message: "Choose a valid New Jersey time. Missing or repeated daylight-saving hours cannot be used." });
+    }
   });
 }

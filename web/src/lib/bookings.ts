@@ -2,6 +2,7 @@ import "server-only";
 import { Temporal } from "@js-temporal/polyfill";
 import { z } from "zod";
 import { eventTimeZone } from "@/lib/events";
+import { getBookingCutoff, formatBookingCutoff } from "@/lib/booking-lead-time";
 import {
   getReservationDates,
   ReservationError,
@@ -92,8 +93,8 @@ export async function saveQuoteBooking(command: BookingCommand) {
     if (current?.status === "CONFIRMED") {
       throw new ReservationError("This booking is already confirmed. Cancel it before changing its date or details.");
     }
-    if (!values || !startsAt || !endsAt || startsAt <= now) {
-      throw new ReservationError("Choose a start time in the future.");
+    if (!values || !startsAt || !endsAt || startsAt < getBookingCutoff(now)) {
+      throw new ReservationError(`Allow at least 48 hours before the event starts. Earliest start: ${formatBookingCutoff(now)}.`);
     }
 
     if (current) {
