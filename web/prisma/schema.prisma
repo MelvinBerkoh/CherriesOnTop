@@ -32,6 +32,7 @@ model QuoteRequest {
   message             String?
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
+  booking             Booking?
 
   @@index([status, createdAt])
   @@index([eventDate])
@@ -106,17 +107,75 @@ enum PublicEventStatus {
 }
 
 model PublicEvent {
-  id          String            @id @default(cuid())
-  status      PublicEventStatus @default(DRAFT)
-  title       String
-  description String
-  location    String
-  address     String
-  startsAt    DateTime          @db.Timestamptz(3)
-  endsAt      DateTime          @db.Timestamptz(3)
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @updatedAt
+  id           String            @id @default(cuid())
+  status       PublicEventStatus @default(DRAFT)
+  title        String
+  description  String
+  location     String
+  address      String
+  startsAt     DateTime          @db.Timestamptz(3)
+  endsAt       DateTime          @db.Timestamptz(3)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  reservations DayReservation[]
 
   @@index([status, startsAt])
   @@index([status, endsAt])
+}
+
+enum BookingStatus {
+  HOLD
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+  EXPIRED
+}
+
+enum ReservationKind {
+  HOLD
+  PRIVATE_EVENT
+  PUBLIC_EVENT
+  BLOCKED
+}
+
+model Booking {
+  id                    String           @id @default(cuid())
+  status                BookingStatus    @default(HOLD)
+  eventDate             DateTime         @db.Date
+  startsAt              DateTime         @db.Timestamptz(3)
+  endsAt                DateTime         @db.Timestamptz(3)
+  title                 String
+  customerName          String
+  customerEmail         String?
+  customerPhone         String?
+  location              String
+  guestCount            Int?
+  quotedTotalCents      Int?
+  internalNotes         String?
+  holdExpiresAt         DateTime?        @db.Timestamptz(3)
+  confirmationTokenHash String?          @unique
+  quoteRequestId        String?          @unique
+  quoteRequest          QuoteRequest?    @relation(fields: [quoteRequestId], references: [id], onDelete: Restrict)
+  reservations          DayReservation[]
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+
+  @@index([status, eventDate])
+  @@index([status, holdExpiresAt])
+}
+
+model DayReservation {
+  id            String          @id @default(cuid())
+  date          DateTime        @unique @db.Date
+  kind          ReservationKind
+  bookingId     String?
+  booking       Booking?        @relation(fields: [bookingId], references: [id], onDelete: Restrict)
+  publicEventId String?
+  publicEvent   PublicEvent?    @relation(fields: [publicEventId], references: [id], onDelete: Restrict)
+  internalNotes String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([bookingId])
+  @@index([publicEventId])
 }

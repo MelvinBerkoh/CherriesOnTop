@@ -3,7 +3,11 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { db } from "@/lib/db";
+import {
+  ReservationError,
+  reservationTransaction,
+  syncPublicEventReservations,
+} from "@/lib/reservations";
 import { requireOwner } from "@/lib/owner-session";
 import {
   eventFields,
@@ -42,8 +46,9 @@ export async function createPublicEvent(
   }
 
   try {
-    await db.publicEvent.create({
-      data: result.data,
+    await reservationTransaction(async (tx) => {
+      await tx.publicEvent.create({ data: result.data });
+      await syncPublicEventReservations(tx, new Date());
     });
   } catch (error) {
     console.error(
@@ -53,7 +58,9 @@ export async function createPublicEvent(
 
     return {
       status: "error",
-      message: "Could not save the event. Please try again.",
+      message: error instanceof ReservationError
+        ? error.message
+        : "Could not save the event. Please try again.",
     };
   }
 
@@ -98,21 +105,22 @@ export async function updatePublicEvent(
   }
 
   try {
-    const saved = await db.publicEvent.updateMany({
-      where: {
-        id: identity.data.id,
-        updatedAt: new Date(identity.data.updatedAt),
-      },
-      data: result.data,
-    });
+    await reservationTransaction(async (tx) => {
+      const saved = await tx.publicEvent.updateMany({
+        where: {
+          id: identity.data.id,
+          updatedAt: new Date(identity.data.updatedAt),
+        },
+        data: result.data,
+      });
 
-    if (saved.count !== 1) {
-      return {
-        status: "error",
-        message:
+      if (saved.count !== 1) {
+        throw new ReservationError(
           "This event changed or is no longer available. Reload before saving again.",
-      };
-    }
+        );
+      }
+      await syncPublicEventReservations(tx, new Date());
+    });
   } catch (error) {
     console.error(
       "Event update failed:",
@@ -121,7 +129,9 @@ export async function updatePublicEvent(
 
     return {
       status: "error",
-      message: "Could not save the event. Please try again.",
+      message: error instanceof ReservationError
+        ? error.message
+        : "Could not save the event. Please try again.",
     };
   }
 
