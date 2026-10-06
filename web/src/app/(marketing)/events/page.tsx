@@ -56,6 +56,7 @@ export default async function EventsPage() {
             little Cherries On Top. You will find our upcoming
             public events here.
           </p>
+          <Link className="text-link" href="/availability">Check catering availability →</Link>
         </section>
 
         <section

@@ -8,7 +8,7 @@ const navigation = [
   { label: "The experience", href: "/#experience" },
   { label: "Gallery", href: "/gallery" },
   { label: "Events", href: "/events" },
-  { label: "Get in touch", href: "/quote" },
+  { label: "Availability", href: "/availability" },
 ];
 
 export function SiteHeader() {

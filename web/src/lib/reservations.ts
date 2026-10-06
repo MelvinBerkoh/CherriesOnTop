@@ -83,8 +83,10 @@ export async function syncPublicEventReservations(
   now: Date,
 ) {
   await expireHolds(tx, now);
+  const todayStart = new Date(Temporal.Instant.from(now.toISOString())
+    .toZonedDateTimeISO(eventTimeZone).startOfDay().epochMilliseconds);
   const events = await tx.publicEvent.findMany({
-    where: { status: "PUBLISHED", endsAt: { gt: now } },
+    where: { status: "PUBLISHED", endsAt: { gt: todayStart } },
     select: { id: true, startsAt: true, endsAt: true },
     orderBy: { id: "asc" },
   });
