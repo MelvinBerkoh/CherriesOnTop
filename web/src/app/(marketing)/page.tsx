@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PackageExplorer } from "@/components/marketing/package-explorer";
 import { cateringPackages } from "@/lib/packages";
 
@@ -113,12 +114,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          <a
-            className="button button-light"
-            href="mailto:cherriesontopchester@gmail.com"
-          >
+          <Link className="button button-light" href="/quote">
             Let’s plan it
-          </a>
+          </Link>
         </div>
       </section>
     </main>

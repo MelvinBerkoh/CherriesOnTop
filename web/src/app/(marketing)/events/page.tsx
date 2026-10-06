@@ -94,7 +94,7 @@ export default async function EventsPage() {
                   Follow on Instagram ↗
                 </a>
 
-                <Link className="text-link" href="/#contact">
+                <Link className="text-link" href="/quote">
                   Ask about your event
                 </Link>
               </div>
@@ -179,7 +179,7 @@ export default async function EventsPage() {
             </p>
           </div>
 
-          <Link className="button button-light" href="/#contact">
+          <Link className="button button-light" href="/quote">
             Plan your event
           </Link>
         </div>

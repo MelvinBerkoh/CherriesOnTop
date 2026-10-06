@@ -46,7 +46,7 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          <Link className="button button-light" href="/#contact">
+          <Link className="button button-light" href="/quote">
             Plan your event
           </Link>
         </div>

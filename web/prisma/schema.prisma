@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum QuoteRequestStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  BOOKED
+  CLOSED
+}
+
+model QuoteRequest {
+  id                  String             @id @default(cuid())
+  status              QuoteRequestStatus @default(NEW)
+  name                String
+  email               String
+  phone               String?
+  eventType           String
+  eventDate           DateTime           @db.Date
+  preferredTime       String?
+  location            String
+  guestCount          Int
+  packageId           String?
+  packageName         String?
+  estimatedTotalCents Int?
+  message             String?
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  @@index([status, createdAt])
+  @@index([eventDate])
+}

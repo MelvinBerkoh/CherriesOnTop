@@ -8,7 +8,7 @@ const navigation = [
   { label: "The experience", href: "/#experience" },
   { label: "Gallery", href: "/gallery" },
   { label: "Events", href: "/events" },
-  { label: "Get in touch", href: "/#contact" },
+  { label: "Get in touch", href: "/quote" },
 ];
 
 export function SiteHeader() {
@@ -46,14 +46,21 @@ export function SiteHeader() {
           <span className="wordmark-sub">ON TOP</span>
         </Link>
 
-        <nav className={styles.desktopNav} aria-label="Main navigation">
+        <nav
+          className={styles.desktopNav}
+          aria-label="Main navigation"
+        >
           {navigation.map((item) => (
-            <Link className="nav-link" key={item.href} href={item.href}>
+            <Link
+              className="nav-link"
+              key={item.href}
+              href={item.href}
+            >
               {item.label}
             </Link>
           ))}
 
-          <Link className="button button-small" href="/#contact">
+          <Link className="button button-small" href="/quote">
             Plan your event
           </Link>
         </nav>
@@ -64,7 +71,9 @@ export function SiteHeader() {
           type="button"
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-label={
+            menuOpen ? "Close navigation" : "Open navigation"
+          }
           onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? "Close" : "Menu"}
@@ -79,14 +88,18 @@ export function SiteHeader() {
       >
         <div className={`container ${styles.mobileLinks}`}>
           {navigation.map((item) => (
-            <Link key={item.href} href={item.href} onClick={closeMenu}>
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+            >
               {item.label}
             </Link>
           ))}
 
           <Link
             className="button"
-            href="/#contact"
+            href="/quote"
             onClick={closeMenu}
           >
             Plan your event
