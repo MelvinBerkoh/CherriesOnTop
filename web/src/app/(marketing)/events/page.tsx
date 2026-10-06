@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { connection } from "next/server";
-import {
-  eventTimeZone,
-  getUpcomingEvents,
-  publicEvents,
-} from "@/lib/events";
+import { eventTimeZone } from "@/lib/events";
+import { getPublishedUpcomingEvents } from "@/lib/public-events";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -42,7 +39,7 @@ const timeFormat = new Intl.DateTimeFormat("en-US", {
 export default async function EventsPage() {
   await connection();
 
-  const events = getUpcomingEvents(publicEvents);
+  const events = await getPublishedUpcomingEvents();
 
   return (
     <main id="main-content">
@@ -52,13 +49,12 @@ export default async function EventsPage() {
           aria-labelledby="events-heading"
         >
           <p className="eyebrow">Find the trailer</p>
-
           <h1 id="events-heading">Your next sweet stop.</h1>
 
           <p className={styles.description}>
-            Come say hello, pick your favorite, and enjoy a little
-            Cherries On Top. You will find our upcoming public events
-            here.
+            Come say hello, pick your favorite, and enjoy a
+            little Cherries On Top. You will find our upcoming
+            public events here.
           </p>
         </section>
 
@@ -74,13 +70,12 @@ export default async function EventsPage() {
           {events.length === 0 ? (
             <div className={styles.emptyState}>
               <p className="eyebrow">More sweet stops to come</p>
-
               <h3>No public dates announced yet.</h3>
 
               <p className={styles.emptyCopy}>
-                Check back for our next stop, or follow along on
-                Instagram. Planning your own celebration? Get in
-                touch to talk about your event.
+                Check back for our next stop, or follow along
+                on Instagram. Planning your own celebration?
+                Get in touch to talk about your event.
               </p>
 
               <div className={styles.actions}>
@@ -105,7 +100,8 @@ export default async function EventsPage() {
                 const start = new Date(event.startsAt);
                 const end = new Date(event.endsAt);
                 const sameDay =
-                  dateFormat.format(start) === dateFormat.format(end);
+                  dateFormat.format(start) ===
+                  dateFormat.format(end);
 
                 return (
                   <li key={event.id}>
@@ -120,7 +116,6 @@ export default async function EventsPage() {
 
                       <div className={styles.eventBody}>
                         <p className="eyebrow">{event.location}</p>
-
                         <h3>{event.title}</h3>
 
                         <p className={styles.eventDate}>
@@ -139,7 +134,6 @@ export default async function EventsPage() {
                         <p className={styles.eventDescription}>
                           {event.description}
                         </p>
-
                         <p className={styles.address}>
                           {event.address}
                         </p>
@@ -172,10 +166,9 @@ export default async function EventsPage() {
             <h2 id="events-contact-heading">
               Give your guests something sweet.
             </h2>
-
             <p>
-              Bring the trailer to your celebration. Tell us the date,
-              the place, and what you are planning.
+              Bring the trailer to your celebration. Tell us
+              the date, the place, and what you are planning.
             </p>
           </div>
 

@@ -98,3 +98,25 @@ model Verification {
   @@index([identifier])
   @@map("verification")
 }
+
+enum PublicEventStatus {
+  DRAFT
+  PUBLISHED
+  CANCELLED
+}
+
+model PublicEvent {
+  id          String            @id @default(cuid())
+  status      PublicEventStatus @default(DRAFT)
+  title       String
+  description String
+  location    String
+  address     String
+  startsAt    DateTime          @db.Timestamptz(3)
+  endsAt      DateTime          @db.Timestamptz(3)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([status, startsAt])
+  @@index([status, endsAt])
+}
