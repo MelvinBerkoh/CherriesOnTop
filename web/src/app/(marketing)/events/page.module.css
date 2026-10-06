@@ -1,0 +1,181 @@
+.intro {
+  padding-block: 5rem 3.5rem;
+}
+
+.intro h1 {
+  max-width: 11ch;
+  margin-top: 1.25rem;
+  color: var(--cherry);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.description {
+  max-width: 35rem;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.schedule {
+  padding-bottom: 5rem;
+}
+
+.scheduleHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.scheduleHeading h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  letter-spacing: -0.04em;
+}
+
+.scheduleHeading span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.emptyState {
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--paper);
+}
+
+.emptyState h3 {
+  max-width: 18ch;
+  margin-top: 1rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.emptyCopy {
+  max-width: 35rem;
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.eventList {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.eventCard {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: start;
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--paper);
+}
+
+.dateBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.75rem;
+  border-radius: 3rem 3rem 0.25rem 0.25rem;
+  background: var(--rose);
+  color: var(--cherry);
+}
+
+.dateBadge span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dateBadge strong {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.eventBody {
+  min-width: 0;
+}
+
+.eventBody h3 {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.eventDate {
+  margin-top: 0.75rem;
+  color: var(--cherry);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.eventDescription {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.address {
+  margin-block: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 680px) {
+  .intro {
+    padding-block: 3rem 2.5rem;
+  }
+
+  .intro h1 {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .schedule {
+    padding-bottom: 3rem;
+  }
+
+  .eventCard {
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .dateBadge {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .dateBadge strong {
+    font-size: 2.25rem;
+  }
+
+  .eventBody h3 {
+    font-size: 1.5rem;
+  }
+}

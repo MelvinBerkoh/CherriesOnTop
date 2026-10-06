@@ -6,6 +6,8 @@ import styles from "./site-header.module.css";
 
 const navigation = [
   { label: "The experience", href: "/#experience" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Events", href: "/events" },
   { label: "Get in touch", href: "/#contact" },
 ];
 

@@ -1,0 +1,231 @@
+.intro {
+  padding-block: 5rem 3rem;
+}
+
+.intro h1 {
+  max-width: 12ch;
+  margin-top: 1.25rem;
+  color: var(--cherry);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.description {
+  max-width: 35rem;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.gallery {
+  padding-bottom: 5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.filter {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--chocolate);
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: var(--cherry);
+}
+
+.filter[aria-pressed="true"] {
+  border-color: var(--cherry);
+  background: var(--cherry);
+  color: var(--cream);
+}
+
+.count {
+  margin-block: 1.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.grid {
+  columns: 3;
+  column-gap: 1.5rem;
+}
+
+.card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 2rem;
+  break-inside: avoid;
+}
+
+.photoButton {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 0.3rem;
+  background: var(--rose);
+  cursor: zoom-in;
+}
+
+.photoButton img {
+  width: 100%;
+  height: auto;
+  transition: transform 250ms ease;
+}
+
+.photoButton:hover img {
+  transform: scale(1.035);
+}
+
+.enlarge {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--cherry);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card figcaption {
+  padding-top: 0.9rem;
+}
+
+.category {
+  color: var(--cherry);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.card figcaption p {
+  margin-top: 0.25rem;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.dialog {
+  width: min(100% - 2rem, 66rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 1.25rem;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  color: var(--chocolate);
+}
+
+.dialog::backdrop {
+  background: rgb(35 20 16 / 85%);
+}
+
+.dialogTop,
+.dialogBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dialogTop {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.dialogButton {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--cherry);
+  cursor: pointer;
+}
+
+.dialogButton:hover {
+  background: var(--rose);
+}
+
+.enlargedPhoto {
+  position: relative;
+  height: min(65dvh, 42rem);
+  background: var(--cream);
+}
+
+.containedPhoto {
+  object-fit: contain;
+}
+
+.dialogBottom {
+  margin-top: 1rem;
+}
+
+.dialogBottom p {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.dialogBottom .count {
+  display: block;
+  margin-block: 0.3rem 0;
+}
+
+.arrows {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 680px) {
+  .intro {
+    padding-block: 3rem 2rem;
+  }
+
+  .intro h1 {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .gallery {
+    padding-bottom: 3rem;
+  }
+
+  .grid {
+    columns: 1;
+  }
+
+  .dialog {
+    padding: 0.75rem;
+  }
+
+  .dialogBottom {
+    align-items: flex-start;
+  }
+}
