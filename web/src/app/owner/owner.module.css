@@ -1,0 +1,272 @@
+.page {
+  min-height: calc(100svh - 8rem);
+  display: grid;
+  place-items: center;
+  padding-block: 4rem;
+}
+
+.card {
+  width: min(100%, 38rem);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--paper);
+}
+
+.card h1 {
+  margin-block: 1rem;
+  color: var(--cherry);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.card p {
+  margin-bottom: 1.25rem;
+}
+
+.card > div {
+  margin-block: 1.5rem;
+}
+
+.card button {
+  cursor: pointer;
+}
+
+.card button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.card [role="alert"] {
+  margin-top: 1rem;
+  color: var(--cherry);
+}
+
+.email {
+  overflow-wrap: anywhere;
+  color: var(--muted);
+}
+
+.dashboard {
+  padding-block: 3rem 5rem;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dashboardHeader h1 {
+  margin-block: 1rem 0.5rem;
+  color: var(--cherry);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.headerActions button {
+  cursor: pointer;
+}
+
+.headerActions [role="alert"] {
+  color: var(--cherry);
+  margin-top: 0.5rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 2.5rem;
+}
+
+.stats > div {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--paper);
+}
+
+.stats dt {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.stats dd {
+  margin: 0.5rem 0 0;
+  color: var(--cherry);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.inbox {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--paper);
+}
+
+.inboxHeading {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.inboxHeading h2 {
+  font-size: 1.75rem;
+  letter-spacing: -0.04em;
+}
+
+.inboxHeading p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table th {
+  padding: 1rem 1.25rem;
+  background: var(--cream);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 1.25rem;
+  vertical-align: top;
+  border-top: 1px solid var(--line);
+}
+
+.table td strong,
+.table td > span,
+.table td > a {
+  display: block;
+}
+
+.table td strong {
+  margin-bottom: 0.35rem;
+}
+
+.table td > span + span {
+  margin-top: 0.25rem;
+}
+
+.table td > a {
+  overflow-wrap: anywhere;
+}
+
+.table td:nth-child(1) {
+  min-width: 13rem;
+}
+
+.table td:nth-child(2) {
+  min-width: 15rem;
+}
+
+.table td:nth-child(3) {
+  min-width: 12rem;
+}
+
+.table td:nth-child(5) {
+  min-width: 11rem;
+  color: var(--muted);
+}
+
+.table .status {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--cream);
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.table .status[data-status="NEW"] {
+  background: var(--rose);
+  color: var(--cherry-dark);
+}
+
+.table .status[data-status="BOOKED"] {
+  background: #e5eee5;
+  color: #244529;
+}
+
+.empty {
+  padding: 3rem 1.5rem;
+}
+
+.empty h3 {
+  font-size: 1.75rem;
+}
+
+.empty p {
+  margin-block: 1rem;
+  color: var(--muted);
+}
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+.pagination > :last-child {
+  justify-self: end;
+}
+
+@media (max-width: 800px) {
+  .dashboardHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .headerActions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 580px) {
+  .stats {
+    gap: 0.5rem;
+  }
+
+  .stats > div {
+    padding: 0.9rem;
+  }
+
+  .stats dt {
+    font-size: 0.75rem;
+  }
+
+  .stats dd {
+    font-size: 2rem;
+  }
+
+  .dashboard {
+    padding-block: 2rem 3rem;
+  }
+}
