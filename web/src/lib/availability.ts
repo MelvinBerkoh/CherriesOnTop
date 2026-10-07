@@ -6,12 +6,13 @@ import { eventTimeZone } from "@/lib/events";
 import { getEarliestBookingDate, formatBookingCutoff } from "@/lib/booking-lead-time";
 import { getReservationDates } from "@/lib/reservations";
 
-export function getCalendarMonth(value: unknown, now = new Date()) {
+export function getCalendarMonth(value: unknown, now = new Date(), range = { pastMonths: 0, futureMonths: 12 }) {
   const today = Temporal.Instant.from(now.toISOString())
     .toZonedDateTimeISO(eventTimeZone).toPlainDate();
-  const first = today.with({ day: 1 });
-  const last = first.add({ months: 12 });
-  let month = first;
+  const current = today.with({ day: 1 });
+  const first = current.subtract({ months: range.pastMonths });
+  const last = current.add({ months: range.futureMonths });
+  let month = current;
   if (typeof value === "string" && /^\d{4}-\d{2}$/.test(value)) {
     try {
       const candidate = Temporal.PlainDate.from(`${value}-01`);

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EventForm } from "@/components/owner/event-form";
+import { EventDeleteForm } from "@/components/owner/event-delete-form";
 import { db } from "@/lib/db";
 import { requireOwner } from "@/lib/owner-session";
 import { toEventLocalInput } from "@/lib/event-time";
@@ -61,6 +62,12 @@ export default async function EditEventPage({
           endsAt: toEventLocalInput(event.endsAt),
           status: event.status,
         }}
+      />
+      <EventDeleteForm
+        key={`delete-${event.updatedAt.toISOString()}`}
+        id={event.id}
+        title={event.title}
+        updatedAt={event.updatedAt.toISOString()}
       />
     </main>
   );

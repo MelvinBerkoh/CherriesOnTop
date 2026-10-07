@@ -178,3 +178,13 @@
     flex-direction: column;
   }
 }
+.deleteSection { max-width: 48rem; margin-top: 2rem; padding: 1.5rem; border: 1px solid #dcafb5; border-radius: 0.4rem; background: var(--paper); }
+.deleteSection h2 { color: var(--cherry); margin-bottom: 0.75rem; font-size: 1.5rem; }
+.deleteSection p { line-height: 1.6; overflow-wrap: anywhere; }
+.deleteButton { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 1rem; padding: 0.75rem 1rem; border: 1px solid var(--cherry); border-radius: 0.3rem; background: var(--cherry); color: white; font: inherit; font-weight: 600; cursor: pointer; }
+.deleteButton:hover { background: var(--cherry-dark); }
+.deleteButton:focus-visible { outline: 3px solid var(--cherry); outline-offset: 3px; }
+.deleteButton:disabled { opacity: 0.7; cursor: wait; }
+.deleteWarning { margin-top: 1rem; font-weight: 600; }
+.deleteActions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 1rem; }
+.deleteActions .deleteButton { margin-top: 0; }

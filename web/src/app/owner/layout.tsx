@@ -20,6 +20,9 @@ export default async function OwnerLayout({
           <Link className="text-link" href="/owner">
             Quote inbox
           </Link>
+          <Link className="text-link" href="/owner/calendar">
+            Calendar
+          </Link>
           <Link className="text-link" href="/owner/events">
             Manage events
           </Link>
