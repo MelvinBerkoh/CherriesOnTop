@@ -36,6 +36,7 @@ export async function manageQuoteBooking(
   revalidatePath("/owner/events");
   revalidatePath("/events");
   revalidatePath("/availability");
+  revalidatePath("/owner/calendar");
   revalidatePath(`/owner/quotes/${identity.data.quoteId}`);
   revalidatePath(`/owner/quotes/${identity.data.quoteId}/booking`);
   redirect(`/owner/quotes/${identity.data.quoteId}/booking`);

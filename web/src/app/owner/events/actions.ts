@@ -9,6 +9,7 @@ import {
   syncPublicEventReservations,
 } from "@/lib/reservations";
 import { requireOwner } from "@/lib/owner-session";
+import { removePublicEvent } from "@/lib/public-event-deletion";
 import {
   eventFields,
   type EventActionState,
@@ -67,6 +68,7 @@ export async function createPublicEvent(
   revalidatePath("/owner/events");
   revalidatePath("/events");
   revalidatePath("/availability");
+  revalidatePath("/owner/calendar");
   redirect("/owner/events");
 }
 
@@ -138,6 +140,34 @@ export async function updatePublicEvent(
 
   revalidatePath("/owner/events");
   revalidatePath(`/owner/events/${identity.data.id}/edit`);
+  revalidatePath("/events");
+  revalidatePath("/availability");
+  revalidatePath("/owner/calendar");
+  redirect("/owner/events");
+}
+
+export async function deletePublicEvent(
+  _previousState: EventActionState,
+  formData: FormData,
+): Promise<EventActionState> {
+  await requireOwner();
+  const identity = z.object({
+    id: z.string().min(1).max(128),
+    updatedAt: z.iso.datetime(),
+    confirmed: z.literal("yes"),
+  }).safeParse(Object.fromEntries(formData));
+  if (!identity.success) {
+    return { status: "error", message: "Reload the event and confirm deletion before trying again." };
+  }
+  try {
+    await removePublicEvent(identity.data.id, identity.data.updatedAt);
+  } catch (error) {
+    console.error("Event delete failed:", error instanceof Error ? error.name : "UnknownError");
+    return { status: "error", message: error instanceof ReservationError ? error.message : "Could not delete the event. Please try again." };
+  }
+  revalidatePath("/owner/events");
+  revalidatePath(`/owner/events/${identity.data.id}/edit`);
+  revalidatePath("/owner/calendar");
   revalidatePath("/events");
   revalidatePath("/availability");
   redirect("/owner/events");
